@@ -1,0 +1,492 @@
+{% extends 'base.html' %}
+<!doctype html>
+{% load static %}
+<html class="no-js"  lang="en">
+{% block content %}
+	<head>
+		<!-- META DATA -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<!--font-family-->
+		<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+
+		<!-- TITLE OF SITE -->
+		<title>Travel</title>
+
+		<!-- favicon img -->
+		<link rel="shortcut icon" type="image/icon" href="{% static 'assets/logo/favicon.png'%}"/>
+
+		<!--font-awesome.min.css-->
+		<link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css'%}" />
+
+		<!--animate.css-->
+		<link rel="stylesheet" href="{% static 'assets/css/animate.css'%}" />
+
+		<!--hover.css-->
+		<link rel="stylesheet" href="{% static 'assets/css/hover-min.css'%}">
+
+		<!--datepicker.css-->
+		<link rel="stylesheet"  href="{% static 'assets/css/datepicker.css'%}" >
+
+		<!--owl.carousel.css-->
+        <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css'%}">
+		<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css'%}"/>
+
+		<!-- range css-->
+        <link rel="stylesheet" href="{% static 'assets/css/jquery-ui.min.css'%}" />
+
+		<!--bootstrap.min.css-->
+		<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css'%}" />
+
+		<!-- bootsnav -->
+		<link rel="stylesheet" href="{% static 'assets/css/bootsnav.css'%}"/>
+
+		<!--style.css-->
+		<link rel="stylesheet" href="{% static 'assets/css/style.css'%}" />
+
+		<!--responsive.css-->
+		<link rel="stylesheet" href="{% static 'assets/css/responsive.css'%}" />
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+		<!--[if lte IE 9]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+			your browser</a> to improve your experience and security.</p>
+		<![endif]-->
+
+
+	
+
+		
+		<a href="{% url 'davlat_create' %}"></a>
+        <!--service start-->
+		<section id="service" class="service">
+			<div class="container">
+			
+				<a href="{% url 'davlat_create' %}"></a>
+				<div class="service-counter text-center">
+
+					<div class="col-md-4 col-sm-4">
+						<div class="single-service-box">
+							<div class="service-img">
+								<img src="{% static 'assets/images/service/s1.png'%}" alt="service-icon" />
+							</div><!--/.service-img-->
+							<div class="service-content">
+								<h2>
+									<a href="#">
+								 Kuchli Comfort
+									</a>
+								</h2>
+								<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
+							</div><!--/.service-content-->
+						</div><!--/.single-service-box-->
+					</div><!--/.col-->
+
+					<div class="col-md-4 col-sm-4">
+						<div class="single-service-box">
+							<div class="service-img">
+								<img src="{% static 'assets/images/service/s2.png'%}" alt="service-icon" />
+							</div><!--/.service-img-->
+							<div class="service-content">
+								<h2>
+									<a href="#">
+									Eng taniqli Mehmonalar
+									</a>
+								</h2>
+								<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
+							</div><!--/.service-content-->
+						</div><!--/.single-service-box-->
+					</div><!--/.col-->
+
+					<div class="col-md-4 col-sm-4">
+						<div class="single-service-box">
+							<div class="statistics-img">
+								<img src="{% static 'assets/images/service/s3.png'%}" alt="service-icon" />
+							</div><!--/.service-img-->
+							<div class="service-content">
+
+								<h2>
+									<a href="#">
+										Arzon Narxlar
+									</a>
+								</h2>
+								<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
+							</div><!--/.service-content-->
+						</div><!--/.single-service-box-->
+					</div><!--/.col-->
+
+				</div><!--/.statistics-counter-->	
+			</div><!--/.container-->
+
+		</section><!--/.service-->
+		<!--service end-->
+
+		<!--galley start-->
+		
+		
+
+
+				
+		<!--packages start-->
+		<section id="pack" class="packages">
+			<div class="container">
+				<div class="gallary-header text-center">
+					<h2>
+					Ko'plab Davlatlar
+					</h2>
+					<p>
+					o'zing tanla!
+					</p>
+
+				
+				</div><!--/.gallery-header-->
+			
+				<div class="packages-content">
+					<div class="row">
+
+						{% for cat in cats %}
+						<div class="col-md-4 col-sm-6">
+							<div class="single-package-item">
+								<img src="{{cat.image.url}}" alt="package-place">
+								<div class="single-package-item-txt">
+									<h3>{{cat.name}} <span class="pull-right"></span></h3>
+									<div class="packages-para">
+
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i> 5 daays 6 nights
+											</span>
+										
+										</p>
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i>  transportation
+											</span>
+											<i class="fa fa-angle-right"></i>  food facilities
+										 </p>
+									</div><!--/.packages-para-->
+									<div class="packages-review">
+										<p>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<span> review</span>
+											
+											
+										</p>
+									</div><!--/.packages-review-->
+									<div class="about-btn">
+										
+									</div><!--/.about-btn-->
+								</div><!--/.single-package-item-txt-->
+							</div><!--/.single-package-item-->
+
+						</div><!--/.col-->
+						{% endfor %}
+
+					</div><!--/.row-->
+				</div><!--/.packages-content-->
+			</div><!--/.container-->
+
+		</section><!--/.packages-->
+		<!--packages end-->
+		<div class="packages-content">
+			<div class="row">
+
+				{% for dav in davlat %}
+				<div class="col-md-4 col-sm-6">
+					<div class="single-package-item">
+						<img src="{{dav.image.url}}" alt="package-place">
+						<div class="single-package-item-txt">
+							<h3>{{dav.name}} <span class="pull-right"></span></h3>
+							<h3>{{dav.about}}</h3>
+							<h3>${{dav.price}}</h3>
+							<a href=""></a>
+							<div class="packages-para">
+								<p>
+									<span>
+										<i class="fa fa-angle-right"></i> 5 daays 6 nights
+									</span>
+									
+								</p>
+								<p>
+									<span>
+										<i class="fa fa-angle-right"></i>  transportation
+										<a class="nav-link active" aria-current="page" href="{% url 'delete' dav.id %}">delete</a>
+										<a class="nav-link active" aria-current="page" href="{% url 'update' dav.id %}">Update</a>
+									</span>
+									<i class="fa fa-angle-right"></i>  food facilities
+								 </p>
+							</div><!--/.packages-para-->
+							<div class="packages-review">
+								<p>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<span> review</span>
+								</p>
+							</div><!--/.packages-review-->
+							<div class="about-btn">
+								
+							</div><!--/.about-btn-->
+						</div><!--/.single-package-item-txt-->
+					</div><!--/.single-package-item-->
+
+				</div><!--/.col-->
+				{% endfor %}
+
+
+		<!-- testemonial Start -->
+		<section   class="testemonial">
+			<div class="container">
+
+				<div class="gallary-header text-center">
+					<h2>
+						Mashxur Joylar
+					</h2>
+					<p>
+						Dunyo go'zalligi shu yerda
+					</p>
+
+				</div><!--/.gallery-header-->
+
+				<div class="owl-carousel owl-theme" id="testemonial-carousel">
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="https://i.pinimg.com/originals/ba/2d/b9/ba2db950ef07cc9a9c5b6314f617e0e7.jpg" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Eiffel minorasi — Fransiya timsoli sifatida dunyoga tanilgan, Parijning eng taniqli meʼmorchilik namunasi boʻlib, oʻz konstruktori Gustave Eiffel sharafiga nomlangan va yiliga 5,5 million kishi tashrif buyuruvchi turizmning mashxur obyektidir. 
+								</p>
+								<h3>
+									<a href="#">
+									
+									</a>
+								</h3>
+								<h4>Paris, France</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="https://images6.alphacoders.com/372/thumb-1920-372925.jpg" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Big Ben — Londondagi Vestminster saroyining eng katta minorasi. 2012-yil sentabr oyidan boshlab qirolicha Elizabeth IIning taxtdagi 60 yillik yubileyiga atab minora nomini Elizabeth minorasiga 
+
+								</p>
+								<h3>
+									<a href="#">
+										
+									</a>
+								</h3>
+								<h4>london, england</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="https://avatars.mds.yandex.net/i?id=77bc4e5316c9a39bbff18adf30b01992_l-5287893-images-thumbs&ref=rim&n=13&w=640&h=640" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Toshkent teleminorasi — Oʻrta Osiyodagi eng baland bino. Uning balandligi 375 metrdir. Rasmiy tilda Toshkent teleminorasi H-375m obyekti deb ataladi. Teleminora 1978-yildan boshlab, 6 yil davomida qurib bitilgan. 1985-yilning 15-yanvarida ishga tushirilgan. 
+								</p>
+								<h3>
+									<a href="#">
+										
+									</a>
+								</h3>
+								<h4>tashkent, Uzbkeistan</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+
+					
+
+		</section><!--/.testimonial-->	
+		<!-- testemonial End -->
+
+
+		<!--blog start-->
+		<section id="blog" class="blog">
+			<div class="container">
+				<div class="blog-details">
+						<div class="gallary-header text-center">
+							<h2>
+								Mashxur Shaxarlar
+							</h2>
+							<p>
+							
+							</p>
+						</div><!--/.gallery-header-->
+						<div class="blog-content">
+							<div class="row">
+
+								<div class="col-sm-4 col-md-4">
+									<div class="thumbnail">
+										<h2>China <span></span></h2>
+										<div class="thumbnail-img">
+											<img src="https://www.worldatlas.com/r/w1200/upload/cd/02/30/shutterstock-575368690.jpg" alt="blog-img">
+											<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
+										
+										</div><!--/.thumbnail-img-->
+									  
+										<div class="caption">
+											<div class="blog-txt">
+												<h3>
+													<a href="#">
+														Discover on beautiful weather, Fantastic foods and historical place in Prag
+													</a>
+												</h3>
+												<p>
+													Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam 
+												</p>
+												
+											</div><!--/.blog-txt-->
+										</div><!--/.caption-->
+									</div><!--/.thumbnail-->
+
+								</div><!--/.col-->
+
+								<div class="col-sm-4 col-md-4">
+									<div class="thumbnail">
+										<h2>Indonseia <span></span></h2>
+										<div class="thumbnail-img">
+											<img src="https://www.holidify.com/images/bgImages/BALI.jpg" alt="blog-img">
+											<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
+										
+										</div><!--/.thumbnail-img-->
+										<div class="caption">
+											<div class="blog-txt">
+												<h3>
+													<a href="#">
+														Discover on beautiful weather, Fantastic foods and historical place in india
+													</a>
+												</h3>
+												<p>
+													Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam 
+												</p>
+												
+											</div><!--/.blog-txt-->
+										</div><!--/.caption-->
+									</div><!--/.thumbnail-->
+
+								</div><!--/.col-->
+
+								<div class="col-sm-4 col-md-4">
+									<div class="thumbnail">
+										<h2>Thailand <span></span></h2>
+										<div class="thumbnail-img">
+											<img src="https://www.migratingmiss.com/wp-content/uploads/2018/06/Chiang-Rai-Beautiful-Places-in-Thailand.jpg" alt="blog-img">
+											<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
+										
+										</div><!--/.thumbnail-img-->
+										<div class="caption">
+											<div class="blog-txt">
+												<h3><a href="#">10 Most Natural place to Discover</a></h3>
+												<p>
+													Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam 
+												</p>
+												
+											</div><!--/.blog-txt-->
+										</div><!--/.caption-->
+									</div><!--/.thumbnail-->
+
+								</div><!--/.col-->
+
+							</div><!--/.row-->
+						</div><!--/.blog-content-->
+					</div><!--/.blog-details-->
+				</div><!--/.container-->
+
+		</section><!--/.blog-->
+		<!--blog end-->
+
+		
+	
+
+
+
+
+		<script src="{% static 'assets/js/jquery.js'%}"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+		<!--modernizr.min.js-->
+		<script  src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+
+		<!--bootstrap.min.js-->
+		<script  src="{% static 'assets/js/bootstrap.min.js'%}"></script>
+
+		<!-- bootsnav js -->
+		<script src="{% static 'assets/js/bootsnav.js'%}"></script>
+
+		<!-- jquery.filterizr.min.js -->
+		<script src="{% static 'assets/js/jquery.filterizr.min.js'%}"></script>
+
+		<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+		<!--jquery-ui.min.js-->
+        <script src="{% static 'assets/js/jquery-ui.min.js'%}"></script>
+
+        <!-- counter js -->
+		<script src="{% static 'assets/js/jquery.counterup.min.js'%}"></script>
+		<script src="{% static 'assets/js/waypoints.min.js'%}"></script>
+
+		<!--owl.carousel.js-->
+        <script  src="{% static 'assets/js/owl.carousel.min.js'%}"></script>
+
+        <!-- jquery.sticky.js -->
+		<script src="{% static 'assets/js/jquery.sticky.js'%}"></script>
+
+        <!--datepicker.js-->
+        <script  src="{% static 'assets/js/jquery.sticky.js'%}"></script>
+
+		<!--Custom JS-->
+		<script src="{% static 'assets/js/custom.js'%}"></script>
+
+
+	</body>
+
+</html>
+{% endblock content %}

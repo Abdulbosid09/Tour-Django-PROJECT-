@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Ananas Tour🍍</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'davlat_create' %}">Create</a>
+               
+
+              </li>
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Categoriyalar
+                </a>
+                <ul class="dropdown-menu">
+                
+                    {% for cat in cats %}
+                    <li><a class="dropdown-item"  href="{% url 'davlat' cat.id %}">{{cat.name}}</a></li>
+                    {% endfor %}
+                </ul>
+               <a href="{% url 'davlat_create' %}"></a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     Aviakompaniyalar
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="https://www.uzairways.com/en">UZBEKISTAN AIRLINES</a></li>
+                      <li><a class="dropdown-item" href="https://www.emirates.com/english/book/?utm_source=google&utm_medium=cpc&utm_campaign=GGS_WO_EN_Brand_Pure___WO_E&gclsrc=aw.ds&gad_source=1">EMIRATES AIRLINES</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="https://www.trip.com/flightsem/flight/line?airline=oz&nofilter=1&locale=en_xx&curr=usd&allianceid=742331&sid=1621932&ppcid=ckid-8441336404_adid-686139411536_akid-kwd-96146883_adgid-162473508852&utm_source=google&utm_medium=cpc&utm_campaign=20900697095&gad_source=1&gclid=Cj0KCQjw6auyBhDzARIsALIo6v9-rPvkCMvBGldUeGuCo9YeFi2pzSTZ81kOwf4NXJ4pPBeb5KW5lBsaAl4dEALw_wcB">ASIAN AIRLINES</a></li>
+                    </ul>
+                  
+              </li>
+              <div class="book-now-btn ml-3 ml-lg-5">
+             
+            </div>
+              
+            </ul>
+           
+            </form>
+          </div>
+        </div>
+      </nav>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+        your browser</a> to improve your experience and security.</p>
+    
+
+    <!-- main-menu Start -->
+    <header class="top-area">
+        <div class="header-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="logo">
+                            <a href="index.html">
+                                tour<span>Tour</span>
+                            </a>
+                        </div><!-- /.logo-->
+                    </div><!-- /.col-->
+                    <div class="col-sm-10">
+                        <div class="main-menu">
+                        
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <i class="fa fa-bars"></i>
+                                </button><!-- / button-->
+                            </div><!-- /.navbar-header-->
+                            <div class="collapse navbar-collapse">		  
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="smooth-menu"><a href="#home">home</a></li>
+                                    <li class="smooth-menu"><a href="#gallery">Destination</a></li>
+                                    <li class="smooth-menu"><a href="#pack">Packages </a></li>
+                                    <li class="smooth-menu"><a href="#spo">Special Offers</a></li>
+                                    <li class="smooth-menu"><a href="#blog">blog</a></li>
+                                    <li class="smooth-menu"><a href="#subs">subscription</a></li>
+                                    <li>
+                                        <button class="book-btn">
+                                        </button>
+                                    </li><!--/.project-btn--> 
+                                </ul>
+                            </div><!-- /.navbar-collapse -->
+                        </div><!-- /.main-menu-->
+                    </div><!-- /.col-->
+                </div><!-- /.row -->
+                <div class="home-border"></div><!-- /.home-border-->
+            </div><!-- /.container-->
+        </div><!-- /.header-area -->
+
+    </header><!-- /.top-area-->
+    <!-- main-menu End -->
+
+    
+    {% block content %}
+
+    {% endblock content %}
+    
+		<!-- footer-copyright start -->
+		<footer  class="footer-copyright">
+			<div class="container">
+				<div class="footer-content">
+					<div class="row">
+
+						<div class="col-sm-3">
+							<div class="single-footer-item">
+								<div class="footer-logo">
+									<a href="index.html">
+										tour<span>Nest</span>
+									</a>
+									<p>
+										best travel agency
+									</p>
+								</div>
+							</div><!--/.single-footer-item-->
+						</div><!--/.col-->
+
+						<div class="col-sm-3">
+							<div class="single-footer-item">
+								<h2>link</h2>
+								<div class="single-footer-txt">
+									<p><a href="#">home</a></p>
+									<p><a href="#">destination</a></p>
+									<p><a href="#">spacial packages</a></p>
+									<p><a href="#">special offers</a></p>
+									<p><a href="#">blog</a></p>
+									<p><a href="#">contacts</a></p>
+								</div><!--/.single-footer-txt-->
+							</div><!--/.single-footer-item-->
+
+						</div><!--/.col-->
+
+						<div class="col-sm-3">
+							<div class="single-footer-item">
+								<h2>popular destination</h2>
+								<div class="single-footer-txt">
+									<p><a href="#">china</a></p>
+									<p><a href="#">venezuela</a></p>
+									<p><a href="#">brazil</a></p>
+									<p><a href="#">australia</a></p>
+									<p><a href="#">london</a></p>
+								</div><!--/.single-footer-txt-->
+							</div><!--/.single-footer-item-->
+						</div><!--/.col-->
+
+						<div class="col-sm-3">
+							<div class="single-footer-item text-center">
+								<h2 class="text-left">contacts</h2>
+								<div class="single-footer-txt text-left">
+									<p>+1 (300) 1234 6543</p>
+									<p class="foot-email"><a href="#">info@tnest.com</a></p>
+									<p>North Warnner Park 336/A</p>
+									<p>Newyork, USA</p>
+								</div><!--/.single-footer-txt-->
+							</div><!--/.single-footer-item-->
+						</div><!--/.col-->
+
+					</div><!--/.row-->
+
+				</div><!--/.footer-content-->
+				<hr>
+				<div class="foot-icons ">
+					<ul class="footer-social-links list-inline list-unstyled">
+		                <li><a href="#" target="_blank" class="foot-icon-bg-1"><i class="fa fa-facebook"></i></a></li>
+		                <li><a href="#" target="_blank" class="foot-icon-bg-2"><i class="fa fa-twitter"></i></a></li>
+		                <li><a href="#" target="_blank" class="foot-icon-bg-3"><i class="fa fa-instagram"></i></a></li>
+		        	</ul>
+		        	<p>&copy; 2017 <a href="https://www.themesine.com">ThemeSINE</a>. All Right Reserved</p>
+
+		        </div><!--/.foot-icons-->
+				<div id="scroll-Top">
+					<i class="fa fa-angle-double-up return-to-top" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+				</div><!--/.scroll-Top-->
+			</div><!-- /.container-->
+
+		</footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>- /.footer-copyright-->
+		<!-- footer-copyright end -->
+
+    
